@@ -1,0 +1,94 @@
+create database CuahangGiaThinh
+go
+create table tbltaikhoan
+(
+taikhoan nvarchar(50)Primary key,
+matkhau nvarchar(50)not null
+)
+create table tblhang
+(
+mahang char(10)Primary key,
+tenhang nvarchar(50)not null,
+dvt nvarchar(50)not null,
+soluong int not null check (soluong>=0),
+dongianhap float not null check (dongianhap>=0),
+dongiaban float not null check (dongiaban>=0),
+anh nvarchar(200),
+ghichu nvarchar(200)
+)
+create table tblncc
+(
+mancc char(10)Primary key,
+tenncc nvarchar(50)not null,
+diachi nvarchar(50)not null,
+dienthoai nvarchar(15)not null,
+
+)
+create table tblnhanvien
+(
+manv char(10)Primary key,
+hoten nvarchar(50)not null,
+gioitinh nvarchar(15)not null,
+ngaysinh date not null check (ngaysinh <getdate()),
+dienthoai nvarchar(15)not null,
+diachi nvarchar(50)not null,
+chucvu nvarchar(50)not null,
+mucluong money not null
+)
+create table tblkhach
+(
+makhach char(10)Primary key,
+tenkhach nvarchar(50)not null,
+diachi nvarchar(50)not null,
+dienthoai nvarchar(15)not null
+)
+create table tblhdnhap
+(
+mahdnhap char(20)Primary key,
+manv char(10)not null,
+mancc char(10)not null,
+ngaynhap datetime not null,
+tongtien float not null check (tongtien>=0),
+Foreign key (manv)references tblnhanvien(manv),
+Foreign key (mancc)references tblncc(mancc)
+)
+create table tblchitiethdnhap
+(
+mahdnhap char(20)not null,
+mahang char(10)not null,
+Primary key( mahdnhap, mahang),
+soluong int not null check(soluong>=0),
+dongia float not null check(dongia>=0),
+chietkhau float not null check(chietkhau>=0),
+thanhtien float not null check(thanhtien>=0),
+Foreign key (mahang)references tblhang(mahang),
+Foreign key (mahdnhap)references tblhdnhap(mahdnhap)
+
+)
+create table tblhdban
+(
+mahdban char(20)Primary key,
+manv char(10)not null,
+ngayban datetime not null,
+makhach char(10)not null,
+tongtien float not null check(tongtien>=0),
+Foreign key (manv)references tblnhanvien(manv),
+Foreign key (makhach)references tblkhach(makhach)
+)
+create table tblchitiethdban
+(
+mahdban char(20)not null,
+mahang char(10)not null,
+Primary key( mahdban, mahang),
+soluong int not null check(soluong>=0),
+dongia float not null check(dongia>=0),
+khuyenmai nvarchar(50)not null,
+thanhtien float not null check(thanhtien>=0),
+Foreign key (mahdban)references tblhdban(mahdban),
+Foreign key (mahang)references tblhang(mahang)
+)
+
+
+insert into tbltaikhoan values('ngocanh12','123456')
+insert into tblncc values('ncc1','Công ty gas VN','Hà N?i','0322 33 5567')
+insert into tblnhanvien values('nv1',N'Ánh',N'n?','03/02/1998','0990809',N'Hà N?i',N'Qu?n l?','4000')
