@@ -61,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(337, 73);
+            this.label2.Location = new System.Drawing.Point(32, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // txtNgaybatdau
             // 
-            this.txtNgaybatdau.Location = new System.Drawing.Point(100, 73);
+            this.txtNgaybatdau.Location = new System.Drawing.Point(108, 73);
             this.txtNgaybatdau.Name = "txtNgaybatdau";
             this.txtNgaybatdau.Size = new System.Drawing.Size(152, 20);
             this.txtNgaybatdau.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // txtNgayketthuc
             // 
-            this.txtNgayketthuc.Location = new System.Drawing.Point(423, 73);
+            this.txtNgayketthuc.Location = new System.Drawing.Point(108, 109);
             this.txtNgayketthuc.Name = "txtNgayketthuc";
             this.txtNgayketthuc.Size = new System.Drawing.Size(152, 20);
             this.txtNgayketthuc.TabIndex = 3;
@@ -96,9 +96,9 @@
             // 
             this.groupBox1.Controls.Add(this.DataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(37, 116);
+            this.groupBox1.Location = new System.Drawing.Point(35, 145);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 176);
+            this.groupBox1.Size = new System.Drawing.Size(616, 210);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Doanh thu các ngày";
@@ -108,14 +108,14 @@
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Location = new System.Drawing.Point(15, 27);
             this.DataGridView.Name = "DataGridView";
-            this.DataGridView.Size = new System.Drawing.Size(556, 136);
+            this.DataGridView.Size = new System.Drawing.Size(595, 177);
             this.DataGridView.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(32, 326);
+            this.label4.Location = new System.Drawing.Point(330, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 6;
@@ -125,7 +125,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(299, 322);
+            this.label5.Location = new System.Drawing.Point(330, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 17);
             this.label5.TabIndex = 7;
@@ -133,15 +133,16 @@
             // 
             // txtDoanhthu
             // 
-            this.txtDoanhthu.Location = new System.Drawing.Point(118, 319);
+            this.txtDoanhthu.Location = new System.Drawing.Point(416, 109);
             this.txtDoanhthu.Name = "txtDoanhthu";
-            this.txtDoanhthu.Size = new System.Drawing.Size(163, 20);
+            this.txtDoanhthu.Size = new System.Drawing.Size(229, 20);
             this.txtDoanhthu.TabIndex = 8;
+            this.txtDoanhthu.TextChanged += new System.EventHandler(this.txtDoanhthu_TextChanged);
             // 
             // cbotennhanvien
             // 
             this.cbotennhanvien.FormattingEnabled = true;
-            this.cbotennhanvien.Location = new System.Drawing.Point(477, 318);
+            this.cbotennhanvien.Location = new System.Drawing.Point(508, 69);
             this.cbotennhanvien.Name = "cbotennhanvien";
             this.cbotennhanvien.Size = new System.Drawing.Size(137, 21);
             this.cbotennhanvien.TabIndex = 9;
@@ -196,13 +197,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 423);
             this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.btnTimlai);
-            this.Controls.Add(this.btnInbaocao);
-            this.Controls.Add(this.btnXemdoanhthu);
-            this.Controls.Add(this.cbotennhanvien);
-            this.Controls.Add(this.txtDoanhthu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnTimlai);
+            this.Controls.Add(this.btnInbaocao);
+            this.Controls.Add(this.cbotennhanvien);
+            this.Controls.Add(this.btnXemdoanhthu);
+            this.Controls.Add(this.txtDoanhthu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNgayketthuc);

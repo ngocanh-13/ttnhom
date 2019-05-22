@@ -77,11 +77,11 @@
     <Compile Include="Hoadonban.Designer.cs">
       <DependentUpon>Hoadonban.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hoadonnhap.cs">
+    <Compile Include="Hoadonnhap1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hoadonnhap.Designer.cs">
-      <DependentUpon>Hoadonnhap.cs</DependentUpon>
+    <Compile Include="Hoadonnhap1.Designer.cs">
+      <DependentUpon>Hoadonnhap1.cs</DependentUpon>
     </Compile>
     <Compile Include="Khachhang.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     <EmbeddedResource Include="Hoadonban.resx">
       <DependentUpon>Hoadonban.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hoadonnhap.resx">
-      <DependentUpon>Hoadonnhap.cs</DependentUpon>
+    <EmbeddedResource Include="Hoadonnhap1.resx">
+      <DependentUpon>Hoadonnhap1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>Khachhang.cs</DependentUpon>

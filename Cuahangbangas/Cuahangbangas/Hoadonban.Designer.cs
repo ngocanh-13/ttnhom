@@ -266,7 +266,7 @@
             this.dataGridViewChitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewChitiet.Location = new System.Drawing.Point(6, 92);
             this.dataGridViewChitiet.Name = "dataGridViewChitiet";
-            this.dataGridViewChitiet.Size = new System.Drawing.Size(647, 112);
+            this.dataGridViewChitiet.Size = new System.Drawing.Size(678, 112);
             this.dataGridViewChitiet.TabIndex = 17;
             this.dataGridViewChitiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewChitiet_CellContentClick);
             // 

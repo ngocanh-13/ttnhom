@@ -53,11 +53,11 @@ namespace Cuahangbangas
                 MessageBox.Show("Hãy nhập ngày kết thúc!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            /*if (cbotennhanvien.Text == "")
+            if (cbotennhanvien.Text == "")
             {
                 MessageBox.Show("Hãy chọn mã nhân viên báo cáo!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }*/
+            }
             sql = "SELECT * FROM tblhdban WHERE 1=1 AND manv =N'" + cbotennhanvien.SelectedValue + "'";
             if ((txtNgaybatdau.Text != "") && (txtNgayketthuc.Text != "") && (cbotennhanvien.Text != ""))
             sql = sql + " AND ngayban >= " + txtNgaybatdau.Text + " AND ngayban <=" + txtNgayketthuc.Text;
@@ -210,6 +210,11 @@ namespace Cuahangbangas
                 e.Handled = true;
         }
         private void txtNgaybatdau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDoanhthu_TextChanged(object sender, EventArgs e)
         {
 
         }
