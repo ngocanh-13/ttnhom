@@ -35,7 +35,6 @@
             this.txt_user = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
-            this.cb_hienthi = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -101,21 +100,10 @@
             // 
             this.txt_pass.Location = new System.Drawing.Point(223, 141);
             this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '*';
             this.txt_pass.Size = new System.Drawing.Size(150, 20);
             this.txt_pass.TabIndex = 8;
             this.txt_pass.UseSystemPasswordChar = true;
-            // 
-            // cb_hienthi
-            // 
-            this.cb_hienthi.AutoSize = true;
-            this.cb_hienthi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cb_hienthi.Location = new System.Drawing.Point(205, 246);
-            this.cb_hienthi.Name = "cb_hienthi";
-            this.cb_hienthi.Size = new System.Drawing.Size(129, 20);
-            this.cb_hienthi.TabIndex = 9;
-            this.cb_hienthi.Text = "Hiển thị mật khẩu";
-            this.cb_hienthi.UseVisualStyleBackColor = true;
-            this.cb_hienthi.CheckedChanged += new System.EventHandler(this.cb_hienthi_CheckedChanged);
             // 
             // Loginf
             // 
@@ -124,7 +112,6 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(527, 276);
-            this.Controls.Add(this.cb_hienthi);
             this.Controls.Add(this.txt_pass);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_user);
@@ -151,7 +138,6 @@
         private System.Windows.Forms.TextBox txt_user;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_pass;
-        private System.Windows.Forms.CheckBox cb_hienthi;
     }
 }
 

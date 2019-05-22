@@ -334,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 499);
+            this.ClientSize = new System.Drawing.Size(753, 477);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Nhanvien";

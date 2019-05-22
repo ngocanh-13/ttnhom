@@ -20,21 +20,10 @@ namespace Cuahangbangas
 
         private void Loginf_Load(object sender, EventArgs e)
         {
-            cb_hienthi.Checked = false;
+            
         }
 
-        private void cb_hienthi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_hienthi.Checked == false)
-            {
-                txt_pass.PasswordChar = '*';
-
-            }
-            else
-            {
-                txt_pass.PasswordChar = (char)0;
-            }
-        }
+        
 
         private void btn_Login_Click(object sender, EventArgs e)
         {

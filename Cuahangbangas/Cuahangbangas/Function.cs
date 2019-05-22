@@ -12,11 +12,10 @@ namespace Cửa_hàng_Gia_Thịnh
     {
         public static SqlConnection Conn;  //Khai báo đối tượng kết nối
         public static string connString;   //Khai báo biến chứa chuỗi kết nối
-
         public static void Connect()
         {
             //Thiết lập giá trị cho chuỗi kết nối
-            connString = @"Data Source=ANHPC\SQLEXPRESS;Initial Catalog=CuahangGiaThinh;Integrated Security=True";
+            connString = @"Data Source=ANHPC\SQLEXPRESS;Initial Catalog=CuahangGiaThinh2;Integrated Security=True";
             Conn = new SqlConnection();         		//Cấp phát đối tượng
             Conn.ConnectionString = connString; 		//Kết nối
             Conn.Open();                        		//Mở kết nối
@@ -74,15 +73,16 @@ namespace Cửa_hàng_Gia_Thịnh
             cmd.Connection = Functions.Conn;
             cmd.CommandText = sql;
             try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (System.Exception)
-            {
-                MessageBox.Show("Dữ liệu đang được dùng, không thể xóa...", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            cmd.Dispose();
-            cmd = null;
+             {
+                 cmd.ExecuteNonQuery();
+             }
+             catch (System.Exception)
+             {
+                 MessageBox.Show("Dữ liệu đang được dùng, không thể xóa...", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+             }
+             cmd.Dispose();
+             cmd = null;
+            //cmd.ExecuteNonQuery();
         }
         public static bool IsDate(string d)
         {

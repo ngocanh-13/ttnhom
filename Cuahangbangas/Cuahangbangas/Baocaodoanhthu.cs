@@ -53,15 +53,15 @@ namespace Cuahangbangas
                 MessageBox.Show("Hãy nhập ngày kết thúc!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cbotennhanvien.Text == "")
+            /*if (cbotennhanvien.Text == "")
             {
                 MessageBox.Show("Hãy chọn mã nhân viên báo cáo!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }*/
             sql = "SELECT * FROM tblhdban WHERE 1=1 AND manv =N'" + cbotennhanvien.SelectedValue + "'";
             if ((txtNgaybatdau.Text != "") && (txtNgayketthuc.Text != "") && (cbotennhanvien.Text != ""))
-            /*sql = sql + " AND ngayban >= " + txtNgaybatdau.Text + " AND ngayban <=" + txtNgayketthuc.Text;
-             */
+            sql = sql + " AND ngayban >= " + txtNgaybatdau.Text + " AND ngayban <=" + txtNgayketthuc.Text;
+             
             {
                 sql = sql + " AND ngayban >=" + Functions.ConvertDateTime(txtNgaybatdau.Text) + " AND ngayban<=" + Functions.ConvertDateTime(txtNgayketthuc.Text);
                 string s = Functions.GetFieldValues(sql);
@@ -75,7 +75,7 @@ namespace Cuahangbangas
             }
             //else
             //    MessageBox.Show("Có " + tblBCDT.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            
             DataGridView.DataSource = tblBCDT;
             Load_DataGridView();
             txtDoanhthu.Text = Functions.GetFieldValues("SELECT SUM(tongtien) FROM tblhdban as a WHERE manv =N'" + cbotennhanvien.SelectedValue + "' AND ngayban >='" + txtNgaybatdau.Text + "' AND a.ngayban <='" + txtNgayketthuc.Text + "'");
