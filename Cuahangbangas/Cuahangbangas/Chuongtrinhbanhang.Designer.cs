@@ -40,7 +40,6 @@
             this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hàngTồnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +51,6 @@
             this.danhMụcToolStripMenuItem,
             this.hóaĐơnToolStripMenuItem,
             this.báoCáoToolStripMenuItem,
-            this.hỗTrợToolStripMenuItem,
             this.thoátToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -146,13 +144,6 @@
             this.doanhThuToolStripMenuItem.Text = "Doanh Thu";
             this.doanhThuToolStripMenuItem.Click += new System.EventHandler(this.doanhThuToolStripMenuItem_Click);
             // 
-            // hỗTrợToolStripMenuItem
-            // 
-            this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(65, 21);
-            this.hỗTrợToolStripMenuItem.Text = "Hỗ trợ ";
-            this.hỗTrợToolStripMenuItem.Click += new System.EventHandler(this.hỗTrợToolStripMenuItem_Click);
-            // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
@@ -194,7 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hàngTồnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doanhThuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hỗTrợToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
     }
 }
