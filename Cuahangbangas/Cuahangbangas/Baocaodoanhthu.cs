@@ -31,24 +31,24 @@ namespace Cuahangbangas
             foreach (Control Ctl in this.Controls)
                 if (Ctl is TextBox)
                     Ctl.Text = "";
-            txtNgaybatdau.Focus();
+            dtpngaybatdau.Focus();
             txtDoanhthu.Enabled = false;
         }
 
         private void btnXemdoanhthu_Click(object sender, EventArgs e)
         {
             string sql;
-            if ((txtNgaybatdau.Text == "") && (txtNgayketthuc.Text == "") && (cbotennhanvien.Text == ""))
+            if ((dtpngaybatdau.Text == "") && (dtpngayketthuc.Text == "") && (cbotennhanvien.Text == ""))
             {
                 MessageBox.Show("Hãy nhập một điều kiện tìm kiếm!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtNgaybatdau.Text == "")
+            if (dtpngaybatdau.Text == "")
             {
                 MessageBox.Show("Hãy nhập ngày bắt đầu!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtNgayketthuc.Text == "")
+            if (dtpngayketthuc.Text == "")
             {
                 MessageBox.Show("Hãy nhập ngày kết thúc!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -58,28 +58,29 @@ namespace Cuahangbangas
                 MessageBox.Show("Hãy chọn mã nhân viên báo cáo!", "Yêu cầu!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            sql = "SELECT * FROM tblhdban WHERE 1=1 AND manv =N'" + cbotennhanvien.SelectedValue + "'";
-            if ((txtNgaybatdau.Text != "") && (txtNgayketthuc.Text != "") && (cbotennhanvien.Text != ""))
-            sql = sql + " AND ngayban >= " + txtNgaybatdau.Text + " AND ngayban <=" + txtNgayketthuc.Text;
+            //sql = "SELECT * FROM tblhdban WHERE 1=1 AND manv =N'" + cbotennhanvien.SelectedValue + "'";
+            sql = "DSHD N'"+dtpngaybatdau.Text.ToString()+"', N'"+dtpngayketthuc.Text.ToString()+"',N'"+cbotennhanvien.Text.ToString()+"'";
+            /*if ((txtNgaybatdau.Text != "") && (txtNgayketthuc.Text != "") && (cbotennhanvien.Text != ""))
+            sql = sql + " AND ngayban >= " + txtNgaybatdau.Text + " AND  ngayban <=" + txtNgayketthuc.Text;
              
             {
                 sql = sql + " AND ngayban >=" + Functions.ConvertDateTime(txtNgaybatdau.Text) + " AND ngayban<=" + Functions.ConvertDateTime(txtNgayketthuc.Text);
                 string s = Functions.GetFieldValues(sql);
                 MessageBox.Show(s);
-            }
+            }*/
             tblBCDT = Functions.GetDataToTable(sql);
-            if (tblBCDT.Rows.Count == 0)
+            /*if (tblBCDT.Rows.Count == 0)
             {
                 MessageBox.Show("Không có bản ghi nào thỏa mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetValues();
-            }
+            }*/
             //else
             //    MessageBox.Show("Có " + tblBCDT.Rows.Count + " bản ghi thỏa mãn điều kiện!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
+            //sql = "DSHD N'"+txtNgaybatdau.Text.ToString()+"', N'"+txtNgayketthuc.Text.ToString()+"',N'"+cbotennhanvien.Text.ToString()+"'";
             DataGridView.DataSource = tblBCDT;
             Load_DataGridView();
-            txtDoanhthu.Text = Functions.GetFieldValues("SELECT SUM(tongtien) FROM tblhdban as a WHERE manv =N'" + cbotennhanvien.SelectedValue + "' AND ngayban >='" + txtNgaybatdau.Text + "' AND a.ngayban <='" + txtNgayketthuc.Text + "'");
-
+            txtDoanhthu.Text = Functions.GetFieldValues("SELECT SUM(tongtien) FROM tblhdban as a WHERE manv =N'" + cbotennhanvien.SelectedValue + "' AND ngayban >='" + dtpngaybatdau.Text + "' AND a.ngayban <='" + dtpngayketthuc.Text + "'");
+        
         }
 
         private void Load_DataGridView()
@@ -131,9 +132,9 @@ namespace Cuahangbangas
             exRange.Range["C2:F2"].Font.ColorIndex = 3;
             exRange.Range["C2:F2"].Font.Size = 17;
             exRange.Range["C2:F2"].MergeCells = true;
-            exRange.Range["C2:E2"].Value = "BÁO CÁO DOANH THU THÁNG " + txtNgaybatdau.Text + "/" + txtNgayketthuc.Text;
+            exRange.Range["C2:E2"].Value = "BÁO CÁO DOANH THU THÁNG " + dtpngaybatdau.Text + "/" + dtpngayketthuc.Text;
             exRange.Range["A1:E3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            sql = "SELECT mahdban, manv, makhach, CONVERT(varchar,ngayban,101),tongtien FROM tblhdban  WHERE ngayban>='" + txtNgaybatdau.Text + "' AND ngayban <='" + txtNgayketthuc.Text + "'AND manv =N'" + cbotennhanvien.SelectedValue + "'";
+            sql = "SELECT mahdban, manv, makhach, CONVERT(varchar,ngayban,101),tongtien FROM tblhdban  WHERE ngayban>='" + dtpngaybatdau.Text + "' AND ngayban <='" + dtpngayketthuc.Text + "'AND manv =N'" + cbotennhanvien.SelectedValue + "'";
             tblThongtinHang = Functions.GetDataToTable(sql);
             tblThongtinHD = Functions.GetDataToTable(sql);
             exRange.Range["A5:F5"].Font.Bold = true;
@@ -187,28 +188,7 @@ namespace Cuahangbangas
         {
             this.Close();
         }
-        private void txtNgaybatdau_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-
-        private void txtNgayketthuc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-        private void txtDoanhthu_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
+        
         private void txtNgaybatdau_TextChanged(object sender, EventArgs e)
         {
 

@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNgaybatdau = new System.Windows.Forms.TextBox();
-            this.txtNgayketthuc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DataGridView = new System.Windows.Forms.DataGridView();
@@ -43,6 +41,8 @@
             this.btnInbaocao = new System.Windows.Forms.Button();
             this.btnTimlai = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
+            this.dtpngaybatdau = new System.Windows.Forms.DateTimePicker();
+            this.dtpngayketthuc = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,21 +66,6 @@
             this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Đến ngày";
-            // 
-            // txtNgaybatdau
-            // 
-            this.txtNgaybatdau.Location = new System.Drawing.Point(108, 73);
-            this.txtNgaybatdau.Name = "txtNgaybatdau";
-            this.txtNgaybatdau.Size = new System.Drawing.Size(152, 20);
-            this.txtNgaybatdau.TabIndex = 2;
-            this.txtNgaybatdau.TextChanged += new System.EventHandler(this.txtNgaybatdau_TextChanged);
-            // 
-            // txtNgayketthuc
-            // 
-            this.txtNgayketthuc.Location = new System.Drawing.Point(108, 109);
-            this.txtNgayketthuc.Name = "txtNgayketthuc";
-            this.txtNgayketthuc.Size = new System.Drawing.Size(152, 20);
-            this.txtNgayketthuc.TabIndex = 3;
             // 
             // label3
             // 
@@ -191,11 +176,29 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // dtpngaybatdau
+            // 
+            this.dtpngaybatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpngaybatdau.Location = new System.Drawing.Point(110, 70);
+            this.dtpngaybatdau.Name = "dtpngaybatdau";
+            this.dtpngaybatdau.Size = new System.Drawing.Size(133, 20);
+            this.dtpngaybatdau.TabIndex = 14;
+            // 
+            // dtpngayketthuc
+            // 
+            this.dtpngayketthuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpngayketthuc.Location = new System.Drawing.Point(110, 109);
+            this.dtpngayketthuc.Name = "dtpngayketthuc";
+            this.dtpngayketthuc.Size = new System.Drawing.Size(133, 20);
+            this.dtpngayketthuc.TabIndex = 15;
+            // 
             // Baocaodoanhthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 423);
+            this.Controls.Add(this.dtpngayketthuc);
+            this.Controls.Add(this.dtpngaybatdau);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -206,8 +209,6 @@
             this.Controls.Add(this.txtDoanhthu);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNgayketthuc);
-            this.Controls.Add(this.txtNgaybatdau);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Baocaodoanhthu";
@@ -224,8 +225,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNgaybatdau;
-        private System.Windows.Forms.TextBox txtNgayketthuc;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView DataGridView;
@@ -237,5 +236,7 @@
         private System.Windows.Forms.Button btnInbaocao;
         private System.Windows.Forms.Button btnTimlai;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.DateTimePicker dtpngaybatdau;
+        private System.Windows.Forms.DateTimePicker dtpngayketthuc;
     }
 }

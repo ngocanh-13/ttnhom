@@ -446,8 +446,7 @@ namespace Cuahangbangas
 
         private void cboMaHDBan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Functions.FillCombo("SELECT mahdban FROM tblhdban", cboMaHDBan, "mahdban", "mahdban");
-            cboMaHDBan.SelectedIndex = -1;
+            
         }
 
         private void btnBoqua_Click(object sender, EventArgs e)
@@ -490,37 +489,23 @@ namespace Cuahangbangas
             tt = sl * dg;
             txtThanhtien.Text = tt.ToString();
         }
-        private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-        private void txtDienthoai_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-        private void txtDongiaban_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
-        private void txtTenhang_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
+        
+        
+        
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboMaHDBan_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboMaHDBan_DropDown(object sender, EventArgs e)
+        {
+            Functions.FillCombo("SELECT mahdban FROM tblhdban", cboMaHDBan, "mahdban", "mahdban");
+            cboMaHDBan.SelectedIndex = -1;
         }
     }
 }
