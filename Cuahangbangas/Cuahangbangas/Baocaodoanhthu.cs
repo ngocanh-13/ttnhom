@@ -79,7 +79,7 @@ namespace Cuahangbangas
             //sql = "DSHD N'"+txtNgaybatdau.Text.ToString()+"', N'"+txtNgayketthuc.Text.ToString()+"',N'"+cbotennhanvien.Text.ToString()+"'";
             DataGridView.DataSource = tblBCDT;
             Load_DataGridView();
-            txtDoanhthu.Text = Functions.GetFieldValues("SELECT SUM(tongtien) FROM tblhdban as a WHERE manv =N'" + cbotennhanvien.SelectedValue + "' AND ngayban >='" + dtpngaybatdau.Text + "' AND a.ngayban <='" + dtpngayketthuc.Text + "'");
+            txtDoanhthu.Text = Functions.GetFieldValues("select sum(tongtien) from tblhdban,tblnhanvien where tblhdban.manv=tblnhanvien.manv and hoten =N'" + cbotennhanvien.SelectedValue + "' AND ngayban >='" + dtpngaybatdau.Text + "' AND ngayban <='" + dtpngayketthuc.Text + "'");
         
         }
 
