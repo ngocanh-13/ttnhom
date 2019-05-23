@@ -75,6 +75,18 @@ tongtien float  check(tongtien>=0),
 Foreign key (manv)references tblnhanvien(manv),
 Foreign key (makhach)references tblkhach(makhach)
 )
+create table tblchitiethdban
+(
+mahdban char(20),
+mahang char(10),
+Primary key( mahdban, mahang),
+soluong int  check(soluong>=0),
+dongia float  check(dongia>=0),
+khuyenmai nvarchar(50),
+thanhtien float  check(thanhtien>=0),
+Foreign key (mahdban)references tblhdban(mahdban),
+Foreign key (mahang)references tblhang(mahang)
+)
 
 
-insert into tbltaikhoan values('1','1')
+
