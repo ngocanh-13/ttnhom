@@ -38,7 +38,7 @@ namespace Cuahangbangas
         private void btnbaocao_Click(object sender, EventArgs e)
         {
             string sql;
-            sql = "SELECT mahang,tenhang, soluong FROM tblhang";
+            sql = "SELECT mahang,tenhang, soluong FROM tblhang ";
             tblBCHT = Functions.GetDataToTable(sql);
             dataGridView1.DataSource = tblBCHT;
             Load_DataGridView();

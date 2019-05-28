@@ -72,6 +72,8 @@
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.cboMaHDBan = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChitiet)).BeginInit();
@@ -158,6 +160,7 @@
             this.mskNgayban.PromptChar = '/';
             this.mskNgayban.Size = new System.Drawing.Size(134, 22);
             this.mskNgayban.TabIndex = 9;
+            this.mskNgayban.ValidatingType = typeof(System.DateTime);
             // 
             // label8
             // 
@@ -481,7 +484,7 @@
             // btnTimkiem
             // 
             this.btnTimkiem.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTimkiem.Location = new System.Drawing.Point(485, 68);
+            this.btnTimkiem.Location = new System.Drawing.Point(429, 70);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(102, 27);
             this.btnTimkiem.TabIndex = 28;
@@ -501,6 +504,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cboMaHDBan);
             this.panel1.Controls.Add(this.btnTimkiem);
             this.panel1.Controls.Add(this.label17);
@@ -517,6 +522,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 103);
             this.panel1.TabIndex = 30;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(84, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 24);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Danh sách HĐ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Location = new System.Drawing.Point(551, 69);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(63, 24);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // Hoadonban
             // 
@@ -566,8 +592,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtThanhtien;
-        private System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.TextBox txtTenhang;
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.ComboBox cbokhuyenmai;
@@ -586,5 +610,9 @@
         private System.Windows.Forms.Button btnTimkiem;
         private System.Windows.Forms.ComboBox cboMaHDBan;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtThanhtien;
+        private System.Windows.Forms.TextBox txtDongia;
+        private System.Windows.Forms.Button btnSua;
     }
 }

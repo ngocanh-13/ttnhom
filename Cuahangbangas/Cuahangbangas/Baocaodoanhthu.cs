@@ -183,7 +183,7 @@ namespace Cuahangbangas
             exApp.Visible = true;
 
         }
-
+        
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -197,6 +197,17 @@ namespace Cuahangbangas
         private void txtDoanhthu_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btndtnv_Click(object sender, EventArgs e)
+        {
+            string sql;
+            sql = "select mahdban,makhach,ngayban,tongtien  from tblhdban, tblnhanvien where tblhdban.manv=tblnhanvien.manv";
+           
+            Functions.RunSql(sql);
+            //Load_DataGridView();
+            DataGridView.Show();
+            
         }
     }
 }

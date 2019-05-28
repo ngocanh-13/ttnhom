@@ -169,7 +169,7 @@ namespace Cuahangbangas
             Load_DataGridView();
             ResetValues();
             btn_bỏ.Enabled = false;
-
+           
         }
 
         private void btn_Xóa_Click(object sender, EventArgs e)

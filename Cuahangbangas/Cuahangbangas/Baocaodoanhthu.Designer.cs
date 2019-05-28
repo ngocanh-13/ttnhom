@@ -43,6 +43,7 @@
             this.btnDong = new System.Windows.Forms.Button();
             this.dtpngaybatdau = new System.Windows.Forms.DateTimePicker();
             this.dtpngayketthuc = new System.Windows.Forms.DateTimePicker();
+            this.btndtnv = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             // DataGridView
             // 
+            this.DataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Location = new System.Drawing.Point(15, 27);
             this.DataGridView.Name = "DataGridView";
@@ -192,11 +194,22 @@
             this.dtpngayketthuc.Size = new System.Drawing.Size(133, 20);
             this.dtpngayketthuc.TabIndex = 15;
             // 
+            // btndtnv
+            // 
+            this.btndtnv.Location = new System.Drawing.Point(22, 375);
+            this.btndtnv.Name = "btndtnv";
+            this.btndtnv.Size = new System.Drawing.Size(55, 22);
+            this.btndtnv.TabIndex = 16;
+            this.btndtnv.Text = "dnnv";
+            this.btndtnv.UseVisualStyleBackColor = true;
+            this.btndtnv.Click += new System.EventHandler(this.btndtnv_Click);
+            // 
             // Baocaodoanhthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 423);
+            this.Controls.Add(this.btndtnv);
             this.Controls.Add(this.dtpngayketthuc);
             this.Controls.Add(this.dtpngaybatdau);
             this.Controls.Add(this.btnDong);
@@ -238,5 +251,6 @@
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.DateTimePicker dtpngaybatdau;
         private System.Windows.Forms.DateTimePicker dtpngayketthuc;
+        private System.Windows.Forms.Button btndtnv;
     }
 }

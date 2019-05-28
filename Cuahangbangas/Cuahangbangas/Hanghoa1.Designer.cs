@@ -57,6 +57,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.DataGridView = new System.Windows.Forms.DataGridView();
+            this.mskdgnhap = new System.Windows.Forms.MaskedTextBox();
+            this.mskdgban = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
@@ -64,6 +66,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mskdgban);
+            this.panel1.Controls.Add(this.mskdgnhap);
             this.panel1.Controls.Add(this.btnOpen);
             this.panel1.Controls.Add(this.txtGhichu);
             this.panel1.Controls.Add(this.txtDongianhap);
@@ -359,6 +363,20 @@
             this.DataGridView.TabIndex = 9;
             this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
+            // mskdgnhap
+            // 
+            this.mskdgnhap.Location = new System.Drawing.Point(294, 178);
+            this.mskdgnhap.Name = "mskdgnhap";
+            this.mskdgnhap.Size = new System.Drawing.Size(104, 20);
+            this.mskdgnhap.TabIndex = 27;
+            // 
+            // mskdgban
+            // 
+            this.mskdgban.Location = new System.Drawing.Point(295, 204);
+            this.mskdgban.Name = "mskdgban";
+            this.mskdgban.Size = new System.Drawing.Size(104, 20);
+            this.mskdgban.TabIndex = 28;
+            // 
             // Hanghoa1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +426,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView DataGridView;
+        private System.Windows.Forms.MaskedTextBox mskdgban;
+        private System.Windows.Forms.MaskedTextBox mskdgnhap;
     }
 }
