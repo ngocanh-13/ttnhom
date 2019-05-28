@@ -72,8 +72,9 @@
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.cboMaHDBan = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChitiet)).BeginInit();
@@ -408,7 +409,7 @@
             // btnThemmoi
             // 
             this.btnThemmoi.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThemmoi.Location = new System.Drawing.Point(76, 32);
+            this.btnThemmoi.Location = new System.Drawing.Point(3, 32);
             this.btnThemmoi.Name = "btnThemmoi";
             this.btnThemmoi.Size = new System.Drawing.Size(102, 27);
             this.btnThemmoi.TabIndex = 21;
@@ -419,9 +420,9 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuu.Location = new System.Drawing.Point(181, 32);
+            this.btnLuu.Location = new System.Drawing.Point(212, 33);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(81, 27);
+            this.btnLuu.Size = new System.Drawing.Size(79, 27);
             this.btnLuu.TabIndex = 22;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -430,7 +431,7 @@
             // btnXoaHD
             // 
             this.btnXoaHD.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoaHD.Location = new System.Drawing.Point(269, 32);
+            this.btnXoaHD.Location = new System.Drawing.Point(297, 33);
             this.btnXoaHD.Name = "btnXoaHD";
             this.btnXoaHD.Size = new System.Drawing.Size(102, 27);
             this.btnXoaHD.TabIndex = 23;
@@ -441,7 +442,7 @@
             // btnInhoadon
             // 
             this.btnInhoadon.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnInhoadon.Location = new System.Drawing.Point(377, 32);
+            this.btnInhoadon.Location = new System.Drawing.Point(405, 32);
             this.btnInhoadon.Name = "btnInhoadon";
             this.btnInhoadon.Size = new System.Drawing.Size(102, 27);
             this.btnInhoadon.TabIndex = 23;
@@ -452,9 +453,9 @@
             // btnBoqua
             // 
             this.btnBoqua.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBoqua.Location = new System.Drawing.Point(485, 32);
+            this.btnBoqua.Location = new System.Drawing.Point(513, 33);
             this.btnBoqua.Name = "btnBoqua";
-            this.btnBoqua.Size = new System.Drawing.Size(102, 27);
+            this.btnBoqua.Size = new System.Drawing.Size(91, 27);
             this.btnBoqua.TabIndex = 24;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.UseVisualStyleBackColor = true;
@@ -463,9 +464,9 @@
             // btnDong
             // 
             this.btnDong.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDong.Location = new System.Drawing.Point(596, 32);
+            this.btnDong.Location = new System.Drawing.Point(610, 32);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(102, 27);
+            this.btnDong.Size = new System.Drawing.Size(88, 27);
             this.btnDong.TabIndex = 25;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -504,6 +505,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dtp);
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.cboMaHDBan);
@@ -523,10 +525,21 @@
             this.panel1.Size = new System.Drawing.Size(709, 103);
             this.panel1.TabIndex = 30;
             // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSua.Location = new System.Drawing.Point(111, 33);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(95, 27);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(84, 70);
+            this.button1.Location = new System.Drawing.Point(552, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 24);
             this.button1.TabIndex = 30;
@@ -534,15 +547,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btnSua
+            // dtp
             // 
-            this.btnSua.Location = new System.Drawing.Point(551, 69);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(63, 24);
-            this.btnSua.TabIndex = 31;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp.Location = new System.Drawing.Point(113, 68);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(92, 20);
+            this.dtp.TabIndex = 32;
             // 
             // Hoadonban
             // 
@@ -614,5 +625,6 @@
         private System.Windows.Forms.TextBox txtThanhtien;
         private System.Windows.Forms.TextBox txtDongia;
         private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.DateTimePicker dtp;
     }
 }

@@ -123,20 +123,31 @@ namespace Cuahangbangas
 
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
-            if (cboMaHDBan.Text == "")
+            /*if (cboMaHDBan.Text == "")
             {
                 MessageBox.Show("Bạn phải chọn một mã hóa đơn để tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cboMaHDBan.Focus();
                 return;
             }
-            txtMaHDBan.Text = cboMaHDBan.Text;
-
+            txtMaHDBan.Text = cboMaHDBan.Text;*/
+            if(dtp.Text=="")
+            {
+                MessageBox.Show("Bạn chọn ngày!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+                return;
+            }
+            //string sql;
+            mskNgayban.Text = dtp.Text;
+            //sql = "SELECT a.mahdban, a.mahang, b.tenhang, a.soluong, b.dongiaban, a.khuyenmai, a.thanhtien FROM tblchitiethdban AS a, tblhang AS b,tblhdban as c WHERE ngayban = N'" + dtp.Text + "' AND a.mahang=b.mahang and a.mahdban=c.mahdban";
+            //tblCTHDB = Functions.GetDataToTable(sql);
+            dataGridViewChitiet.DataSource = tblCTHDB;
             Load_ThongtinHD();
             Load_DataGridViewChitiet();
             btnXoaHD.Enabled = true;
             btnLuu.Enabled = true;
             btnInhoadon.Enabled = true;
-            cboMaHDBan.SelectedIndex = -1;
+            
+            //cboMaHDBan.SelectedIndex = -1;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -608,7 +619,7 @@ namespace Cuahangbangas
                 cboMahang.Focus();
                 return;
             }
-            sql = "update tblchitiethdban set mahang=N'"+cboMahang.Text.ToString()+"',soluong=N'"+txtSoluong.Text.ToString()+"',khuyenmai=N'"+cboMahang.Text.ToString()+"',thanhtien=N'"+txtThanhtien.Text+"' where mahdban=N'"+txtMaHDBan.Text+"' ";
+            sql = "update tblchitiethdban set mahang=N'"+cboMahang.Text.ToString()+"',soluong=N'"+txtSoluong.Text.ToString()+"',khuyenmai=N'"+cbokhuyenmai.Text.ToString()+"',thanhtien=N'"+txtThanhtien.Text+"' where mahdban=N'"+txtMaHDBan.Text+"' ";
             Functions.RunSql(sql);
             Load_DataGridViewChitiet();
             ResetValues();
