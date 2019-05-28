@@ -89,4 +89,5 @@ Foreign key (mahang)references tblhang(mahang)
 )
 
 
-insert into tbltaikhoan values('1','1')
+
+
