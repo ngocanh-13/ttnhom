@@ -72,9 +72,9 @@
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.cboMaHDBan = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.btnSua = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dtp = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewChitiet)).BeginInit();
@@ -306,13 +306,11 @@
             // cbokhuyenmai
             // 
             this.cbokhuyenmai.FormattingEnabled = true;
-            this.cbokhuyenmai.Items.AddRange(new object[] {
-            "Nước rửa chén",
-            "Đế để gas"});
             this.cbokhuyenmai.Location = new System.Drawing.Point(313, 55);
             this.cbokhuyenmai.Name = "cbokhuyenmai";
             this.cbokhuyenmai.Size = new System.Drawing.Size(134, 24);
             this.cbokhuyenmai.TabIndex = 12;
+            this.cbokhuyenmai.DropDown += new System.EventHandler(this.cbokhuyenmai_DropDown);
             this.cbokhuyenmai.SelectedIndexChanged += new System.EventHandler(this.cbokhuyenmai_SelectedIndexChanged);
             // 
             // cboMahang
@@ -525,6 +523,14 @@
             this.panel1.Size = new System.Drawing.Size(709, 103);
             this.panel1.TabIndex = 30;
             // 
+            // dtp
+            // 
+            this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp.Location = new System.Drawing.Point(113, 68);
+            this.dtp.Name = "dtp";
+            this.dtp.Size = new System.Drawing.Size(92, 20);
+            this.dtp.TabIndex = 32;
+            // 
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -546,14 +552,6 @@
             this.button1.Text = "Danh sách HĐ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // dtp
-            // 
-            this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp.Location = new System.Drawing.Point(113, 68);
-            this.dtp.Name = "dtp";
-            this.dtp.Size = new System.Drawing.Size(92, 20);
-            this.dtp.TabIndex = 32;
             // 
             // Hoadonban
             // 

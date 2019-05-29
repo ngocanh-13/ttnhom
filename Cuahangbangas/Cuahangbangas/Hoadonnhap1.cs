@@ -28,7 +28,7 @@ namespace Cuahangbangas
             btnXoaHD.Enabled = false;
             btnInhoadon.Enabled = false;
             txtTongtien.Enabled = false;
-            txtmahdnhap.ReadOnly = false;
+            txtmahdnhap.ReadOnly = true;
             txtTennhanvien.ReadOnly = true;
             txttenncc.ReadOnly = true;
             txtdiachi.ReadOnly = true;
@@ -98,7 +98,7 @@ namespace Cuahangbangas
             btnInhoadon.Enabled = false;
             btnThemmoi.Enabled = false;
             ResetValues();
-            //txtmahdnhap.Text = Functions.CreateKey("HDN");
+            txtmahdnhap.Text = Functions.CreateKey("HDN");
             Load_DataGridViewChitiet();
         }
         private void ResetValues()
@@ -519,6 +519,11 @@ namespace Cuahangbangas
         private void btnDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbochietkhau_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

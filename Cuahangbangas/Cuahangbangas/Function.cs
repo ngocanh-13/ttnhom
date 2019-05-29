@@ -15,7 +15,7 @@ namespace Cửa_hàng_Gia_Thịnh
         public static void Connect()
         {
             //Thiết lập giá trị cho chuỗi kết nối
-            connString = @"Data Source=.;Initial Catalog=CuahangGiaThinh2;Integrated Security=True";
+            connString = @"Data Source=ANHPC\SQLEXPRESS;Initial Catalog=CuahangGiaThinh2;Integrated Security=True";
             Conn = new SqlConnection();         		//Cấp phát đối tượng
             Conn.ConnectionString = connString; 		//Kết nối
             Conn.Open();                        		//Mở kết nối
@@ -136,12 +136,13 @@ namespace Cửa_hàng_Gia_Thịnh
         public static string CreateKey(string tiento)
         {
             string key = tiento;
-            string[] partsDay;
-            partsDay = DateTime.Now.ToShortDateString().Split('/');
+            //string[] partsDay;
+            //partsDay = DateTime.Now.ToShortDateString().Split('/');
             //Ví dụ 07/08/2009
-            string d = String.Format("{0}{1}{2}", partsDay[0], partsDay[1], partsDay[2]);
+            //string d = String.Format("{0}{1}{2}", partsDay[0], partsDay[1], partsDay[2]);
+            string d = ""
             key = key + d;
-            string[] partsTime;
+            /*string[] partsTime;
             partsTime = DateTime.Now.ToLongTimeString().Split(':');
             //Ví dụ 7:08:03 PM hoặc 7:08:03 AM
             if (partsTime[2].Substring(3, 2) == "PM")
@@ -153,7 +154,7 @@ namespace Cửa_hàng_Gia_Thịnh
             partsTime[2] = partsTime[2].Remove(2, 3);
             string t;
             t = String.Format("_{0}{1}{2}", partsTime[0], partsTime[1], partsTime[2]);
-            key = key + t;
+            key = key + t;*/
             return key;
         }
         public static string ConvertTimeTo24(string hour)

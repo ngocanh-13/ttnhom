@@ -27,7 +27,7 @@ namespace Cuahangbangas
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=CuahangGiaThinh2;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=ANHPC\SQLEXPRESS;Initial Catalog=CuahangGiaThinh2;Integrated Security=True");
             string sqlSelect = "Select * from tbltaikhoan where taikhoan=N'" + txt_user.Text + "'and matkhau=N'" + txt_pass.Text + "'";
             conn.Open();
             SqlCommand cmd = new SqlCommand(sqlSelect, conn);

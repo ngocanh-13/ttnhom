@@ -130,19 +130,19 @@ namespace Cuahangbangas
                 return;
             }
             txtMaHDBan.Text = cboMaHDBan.Text;*/
-            if(dtp.Text=="")
+            /*if(dtp.Text=="")
             {
                 MessageBox.Show("Bạn chọn ngày!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 
                 return;
-            }
-            //string sql;
-            mskNgayban.Text = dtp.Text;
-            //sql = "SELECT a.mahdban, a.mahang, b.tenhang, a.soluong, b.dongiaban, a.khuyenmai, a.thanhtien FROM tblchitiethdban AS a, tblhang AS b,tblhdban as c WHERE ngayban = N'" + dtp.Text + "' AND a.mahang=b.mahang and a.mahdban=c.mahdban";
-            //tblCTHDB = Functions.GetDataToTable(sql);
+            }*/
+            string sql;
+            sql = "TKHD'"+dtp.Text.ToString()+"'";
+            tblCTHDB = Functions.GetDataToTable(sql);
             dataGridViewChitiet.DataSource = tblCTHDB;
-            Load_ThongtinHD();
-            Load_DataGridViewChitiet();
+            //Load_ThongtinHD();
+            //Load_DataGridViewChitiet();
+            dataGridViewChitiet.Show();
             btnXoaHD.Enabled = true;
             btnLuu.Enabled = true;
             btnInhoadon.Enabled = true;
@@ -624,6 +624,14 @@ namespace Cuahangbangas
             Load_DataGridViewChitiet();
             ResetValues();
             btnBoqua.Enabled = false;
+        }
+
+        private void cbokhuyenmai_DropDown(object sender, EventArgs e)
+        {
+            cbokhuyenmai.Items.Clear();
+            cbokhuyenmai.Items.Add("5");
+            cbokhuyenmai.Items.Add("10");
+            cbokhuyenmai.Items.Add("15");
         }
     }
     }

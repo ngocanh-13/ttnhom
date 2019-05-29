@@ -311,6 +311,7 @@
             this.cbochietkhau.Size = new System.Drawing.Size(134, 24);
             this.cbochietkhau.TabIndex = 12;
             this.cbochietkhau.DropDown += new System.EventHandler(this.cbochietkhau_DropDown);
+            this.cbochietkhau.SelectedIndexChanged += new System.EventHandler(this.cbochietkhau_SelectedIndexChanged);
             this.cbochietkhau.TextChanged += new System.EventHandler(this.cbochietkhau_TextChanged);
             // 
             // cboMahang
