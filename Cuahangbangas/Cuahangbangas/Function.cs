@@ -140,7 +140,7 @@ namespace Cửa_hàng_Gia_Thịnh
             //partsDay = DateTime.Now.ToShortDateString().Split('/');
             //Ví dụ 07/08/2009
             //string d = String.Format("{0}{1}{2}", partsDay[0], partsDay[1], partsDay[2]);
-            string d = ""
+            string d = "";
             key = key + d;
             /*string[] partsTime;
             partsTime = DateTime.Now.ToLongTimeString().Split(':');
